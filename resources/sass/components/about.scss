@@ -1,0 +1,46 @@
+.about{
+    color: $blue;
+    &__img{
+        margin-left:  -20px;
+    }
+
+    &__content{
+        margin-left: -44%;
+        background-color: white;
+    }
+
+    &__title{
+        font-family: 'ObjectSans-Bold';
+        font-size: 2.5em;
+    }
+
+    &__description{
+        color: $blue;
+    }
+
+    &__content-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        margin-left: 20%;
+    }
+    &__box{
+        background-color: $blue;
+        width: 100%;
+        color: white;
+        padding: 20px  40px;
+        z-index: 2;
+        transition: transform 3s linear;
+        transition-delay: -2s;
+        &__hidden{
+            transform: translateX(100%);
+        }
+        &__show{
+            transform: translateX(0%);
+        }
+        &__description{
+            width: 70%;
+
+        }
+    }
+}

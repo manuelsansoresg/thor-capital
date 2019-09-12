@@ -1,0 +1,61 @@
+.criteria{
+    color: $blue;
+
+    &__content{
+        margin-left: -44%;
+        background-color: white;
+    }
+    &__left{
+        width: 50%;
+    }
+    &__left-content{
+        width: 80%;
+    }
+    &__img{
+        width: 50%;
+    }
+    img{
+        height: 80vh;
+    }
+    &__title{
+        font-family: 'ObjectSans-Bold';
+        font-size: 2.2em;
+        line-height: 35px;
+        margin-top: 40px;
+    }
+
+    &__list-right{
+        width:100%;
+        float:left;
+        height:100%;
+        padding-left:0px;
+        color: white;
+
+        ul, ul:last-child{
+            color: white;
+            border: none !important;
+        }
+
+        ul>li:before {
+            content: "•"; /* Insert content that looks like bullets */
+            padding-right: 8px;
+            color: white; /* Or a color you prefer */
+        }
+        ul>li{
+            color: white;
+            border: none !important;
+            padding: 3px !important;
+
+        }
+    }
+
+    &__list{
+        color: white;
+        background-color: $blue;
+        width: 40% !important;
+        margin-left: 62% !important;
+        bottom: -45px;
+        position: absolute;
+        padding: 0px 20px;
+    }
+}

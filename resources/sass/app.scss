@@ -1,0 +1,95 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import 'fonts';
+@import 'components/intro';
+@import 'components/menu';
+@import 'components/accordeon';
+@import 'components/input_materialize';
+@import 'components/about';
+@import 'components/footer';
+@import 'components/criteria';
+@import 'components/contact';
+
+body{
+    background-color: transparent;
+    font-family: 'ObjectSans-Regular';
+}
+
+#moveUp , #moveDown{
+    cursor: pointer;
+}
+
+.linkActive{
+    font-family: 'ObjectSans-Bold';
+    color: $blue !important;
+}
+
+.ul-number{
+   margin-top: 20px;
+}
+
+.color-blue{
+    color: $blue;
+}
+
+.colorLow{
+    color: $blue-low;
+}
+
+.objectsans-bold{
+    font-family: 'ObjectSans-Bold';
+}
+
+
+.objectsans-heavy{
+    font-family: 'ObjectSans-Heavy';
+}
+
+.content-video{
+   position: relative;
+}
+
+.video{
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+
+}
+
+.content-link{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.btn-sectionCircle{
+    border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+    .ml-md-n6{
+        margin-left: -5.6rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .video{
+        height: auto;
+    }
+
+    .content-link{
+        font-size: 12px;
+    }
+}
