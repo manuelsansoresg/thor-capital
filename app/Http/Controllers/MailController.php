@@ -11,7 +11,7 @@ class MailController extends Controller
 {
     public function sendContact(ContactRequest $request)
     {
-        Mail::to('manuel@mexicoindie.com.mx')->send(new ContactMail($request->all()));
+        Mail::to('contacto@tor-capital.com')->send(new ContactMail($request->all()));
         //Mail::to('manuel@mexicoindie.com.mx')->send(new ContactMail($request->all()));
         return $request->json('ok');
     }

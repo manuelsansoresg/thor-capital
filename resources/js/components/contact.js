@@ -1,29 +1,50 @@
-window.sendContact = function name() {
+$( "#contactanos" ).submit(function( event ) {
+    event.preventDefault();
+    sendContact('contactanos');
+});
 
-    let myForm   = document.getElementById('contactanos');
+$( "#contactanosmovil" ).submit(function( event ) {
+    event.preventDefault();
+    sendContact('contactanosmovil');
+});
+function sendContact(name_div) {
+
+    let myForm   = document.getElementById(name_div);
     let formData = new FormData(myForm);
     var Swal     = require('sweetalert2');
 
-    $('#spinner-contacto').show();
+    var error_title = $('#error-title').val();
+    var error_description = $('#error-description').val();
+
+    var ok_title = $('#ok-title').val();
+    var ok_description = $('#ok-description').val();
+
+    $('.spinner-contacto').show();
 
     axios.post
     ('/contact/send', formData)
         .then(function (response) {
 
-            $('#spinner-contacto').hide();
+            $('.spinner-contacto').hide();
 
-            document.getElementById('contactanos').reset();
+            document.getElementById(name_div).reset();
+
+            Swal.fire({
+                title: ok_title,
+                text: ok_description,
+                type: 'success',
+            });
 
         })
         .catch(function (error) {
 
             var result = error.response.data;
 
-            $('#spinner-contacto').hide();
+            $('.spinner-contacto').hide();
 
             Swal.fire({
-                title: '¡Error!',
-                text: 'Los campos marcados con * son obligatorios',
+                title: '¡ '+error_title+' !',
+                text: error_description,
                 type: 'error',
             });
 

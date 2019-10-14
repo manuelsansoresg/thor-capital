@@ -1,0 +1,163 @@
+.team-movil{
+    display: none;
+    color: $blue;
+    #scroll::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+
+    }
+
+    #scroll::-webkit-scrollbar
+    {
+        width: 6px;
+        background-color: #F5F5F5;
+        height: 5px;
+    }
+
+    #scroll::-webkit-scrollbar-thumb
+    {
+        background-color: $blue;
+    }
+}
+.team{
+     &__content{
+        margin-left: -20%;
+        background-color: white;
+    }
+
+    &__flex{
+        width: 88%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title{
+
+        height: 100%;
+
+       &__content{
+           transform:rotate(270deg);
+           transform-origin:0 0;
+           font-family: "ObjectSans-Bold";
+           font-size: 2.2em;
+           color: $blue;
+           position: absolute;
+       }
+
+    }
+
+    &__card1{
+
+    }
+
+    &__card2{
+
+    }
+
+    &__footer-title{
+        font-family: 'ObjectSans-Bold';
+        color: $blue;
+    }
+
+    &__icon-more{
+        margin-right: 10px;
+    }
+
+    &__footer-subtitle{
+        color: $blue-low;
+    }
+}
+
+
+/******************************************************************************
+**  responsive
+*********************************************************************************
+*/
+@media (min-width: 1920px) {
+
+}
+
+@include media-breakpoint-down(md) {
+    .team{
+        &__flex{
+            width: 100%;
+            margin-top: 28px;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__title{
+            &__content{
+                position: relative;
+                transform: none;
+            }
+        }
+
+        &__content{
+            margin-left: -59%;
+        }
+
+        &__card2{
+            margin-top: 5px;
+        }
+    }
+
+    .card{
+        width: 343px;
+        min-height: 426px;
+        &__title{
+            margin-top: 10px;
+        }
+        &__description{
+            overflow-x: scroll ;
+            padding: 0px 10px;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-down(sm){
+
+    .card-face-footer {
+
+
+    }
+    .card {
+
+        &__title{
+            margin-top: 10px;
+        }
+        &__description{
+            overflow-x: auto ;
+            padding: 0px 10px;
+        }
+    }
+    .team{
+        &__flex{
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        &__card1{
+            width: 100%;
+        }
+
+        &__card2{
+            margin-top: 20px;
+            width: 100%;
+        }
+        &__icon-more {
+            margin-right: 35px;
+        }
+    }
+    .team-movil{
+        display: block;
+        &__title{
+            font-family: 'ObjectSans-Bold';
+            font-size: 2.5em;
+            margin-top: 20%;
+        }
+    }
+}

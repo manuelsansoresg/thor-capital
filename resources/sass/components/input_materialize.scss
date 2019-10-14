@@ -23,7 +23,6 @@
     padding: 0 15px;
     font-family: 'ObjectSans-Regular';
     font-size: 1em;
-    background-color: transparent;
     color: $blue;
 }
 .mat-input-outer label{
@@ -35,7 +34,7 @@
     transition: .2s;
     color: $blue;
     cursor: text;
-    opacity: 0.4;
+    /*opacity: 0.4;*/
     filter: alpha(opacity=40);
 }
 .mat-input-outer .border{
@@ -44,6 +43,7 @@
     transition: .3s;
     -webkit-transition: .3s;
     -ms-transition: .3s;
+    border: 1px solid $blue-low !important;
 }
 .mat-input-outer .border::before{
     content: " ";
@@ -81,4 +81,24 @@
 
 .mat-input-outer input:focus, .mat-input-outer textarea:focus{
  outline: none;
+}
+
+
+/******************************************************************************
+**  responsive
+*********************************************************************************
+*/
+@media (min-width: 1920px) {
+
+}
+
+@include media-breakpoint-down(md) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-down(sm){
+    .mat-input{
+        width: 100%;
+    }
 }

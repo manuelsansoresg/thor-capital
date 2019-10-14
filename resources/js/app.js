@@ -34,6 +34,19 @@ const app = new Vue({
 });
 */
 
+var isMovil = false;
+/* saber si viene de escritorio o movil */
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        isMovil = true;
+    } else {
+    }
+}
+
+var x = window.matchMedia("(max-width: 700px)");
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
+
 /* animation*/
 function toggle() {
     var left = document.querySelector('.about__box');
@@ -45,27 +58,45 @@ function toggle() {
 /* animation*/
 
 function onReady(callback) {
-
+    if(isMovil === true){
+        $('.movil').hide();
+    }
     var intervalId = window.setInterval(function() {
         if (document.getElementsByTagName('body')[0] !== undefined) {
+            $('.about__title').addClass('animated fadeInUp');
+            $('.about__description').addClass('animated zoomInRight');
+            $('.about__box__description').addClass('animated fadeInUp');
+            $('.about__img').addClass('animated fadeInUp');
+
+            if(isMovil === true){
+                $('.navbar').show();
+                $('.movil').show();
+            }
             window.clearInterval(intervalId);
             callback.call(this);
+
         }
-    }, 1000);
+    }, 2000);
 }
 
 function setVisible(selector, visible) {
+
     document.querySelector(selector).style.display = visible ? 'block' : 'none';
 }
 
 onReady(function() {
+    //fin callback
     setVisible('.intro', false);
+    if(isMovil === true){
+        $('.movil').show();
+    }else{
+        $('.movil').hide();
+    }
     toggle();
-   // setVisible('#loading', false);
 });
 
 $(document).ready(function () {
-/* acordeon*/
+    /* acordeon*/
     $(".expand").on( "click", function() {
         $(this).next().slideToggle(200);
         var $expand;
@@ -78,7 +109,11 @@ $(document).ready(function () {
         }
     });
 /* acordeon*/
+
+
+
 });
+
 
 require('./components/landing');
 require('./components/input_materialize');

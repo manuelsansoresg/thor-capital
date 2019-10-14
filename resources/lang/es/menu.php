@@ -1,7 +1,9 @@
 <?php
 return [
     'about' => 'Nosotros',
-    'criteria' => 'Criterios <br> de Inversión',
-    'contact' => 'Contactanos',
+    'criteria' => 'Criterios de Inversión',
+    'contact' => 'Contáctanos',
+    'team' => 'Equipo',
+    'transaction' => 'Transacción',
 
 ];

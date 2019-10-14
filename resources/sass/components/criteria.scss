@@ -6,7 +6,7 @@
         background-color: white;
     }
     &__left{
-        width: 50%;
+        width: 60%;
     }
     &__left-content{
         width: 80%;
@@ -14,14 +14,20 @@
     &__img{
         width: 50%;
     }
+
     img{
         height: 80vh;
     }
+
     &__title{
         font-family: 'ObjectSans-Bold';
-        font-size: 2.2em;
+        font-size: 2em;
         line-height: 35px;
-        margin-top: 40px;
+        margin-top: 10%;
+    }
+
+    &__description{
+        font-size: 0.8rem;
     }
 
     &__list-right{
@@ -52,10 +58,56 @@
     &__list{
         color: white;
         background-color: $blue;
-        width: 40% !important;
+        width: 31% !important;
         margin-left: 62% !important;
-        bottom: -45px;
+        bottom: -50px;
         position: absolute;
         padding: 0px 20px;
+    }
+}
+
+.criteria-movil{
+    color: $blue;
+    img{
+        width: 100%;
+    }
+}
+
+/******************************************************************************
+**  responsive
+*********************************************************************************
+*/
+@media (min-width: 1920px) {
+    .criteria{
+        &__title{
+            font-size: 2.5em;
+        }
+        &__description{
+            font-size: 1rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .criteria{
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-down(sm){
+    .criteria{
+        &__list{
+            width: 100% !important;
+            margin-left: 0% !important;
+            position: relative;
+            padding: 0px 20px;
+        }
+        &__title{
+            font-size: 1.8em;
+        }
     }
 }

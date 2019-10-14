@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Nosotros')
 
 @section('content_header')
 <section class="content-header">
@@ -20,15 +20,15 @@
     <div class="row">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Operaciones</h3>
+                <h3 class="box-title">Nosotros</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <div>
-                    <a href="/admin/operaciones/create" class="btn btn-app pull-right">
+               {{-- <div>
+                    <a href="/admin/about/create" class="btn btn-app pull-right">
                         <i class="fa fa-plus"></i> Nuevo
                     </a>
-                </div>
+                </div>--}}
                 <div class="col-md-12">
                     @include('flash::message')
                 </div>
@@ -36,44 +36,44 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">#</th>
+                            <th>Título</th>
                             <th>Descripción</th>
-                            <th>Status</th>
+                            <th>Descripción 2</th>
+                            <th>Lenguaje</th>
                             <th></th>
                         </tr>
                     </thead>
-                    @foreach ($operations as $operation)
+
+                    @foreach ($es_sections as $es_section)
+
                     <tbody>
                         <tr>
-                            <td>{{ $operation->id  }}</td>
-                            <td>{{ $operation->description  }}</td>
+                            <td>{{ $es_section['id']  }}</td>
+                            <td>{!! $es_section['title'] !!}</td>
+                            <td> {{ Str::limit(strip_tags($es_section['description'] ) , 40) }}</td>
+                            <td>{{ Str::limit(strip_tags($es_section['description2'] ) , 40) }}</td>
                             <td>
-                                @if($operation->status == 0)
-                                <i class="fas fa-ban text-danger"></i>
-                                <span>Inactivo</span>
-                                @else
-                                <i class="fas fa-ban text-success"></i>
-                                <span>Activo</span>
+                                @if ($es_section['lang'] == 'es')
+                                    <span class="badge bg-blue">{{ $es_section['lang'] }}</span>
+                                @endif
+                                @if($es_section['lang'] == 'en')
+                                    <span class="badge bg-green">{{ $es_section['lang'] }}</span>
+                                @endif
+                                @if($es_section['lang'] == 'fr')
+                                    <span class="badge bg-purple">{{ $es_section['lang'] }}</span>
                                 @endif
 
                             </td>
+
                             <td>
-                                {{ Form::open(['route' => ['operaciones.destroy', $operation->id ],'class' => 'form-inline', 'method' => 'DELETE' ])}}
-                                <a href="{{route('operaciones.edit', $operation->id)}}" class="btn btn-primary">
+                                {{ Form::open(['route' => ['about.destroy', $es_section['id'] ],'class' => 'form-inline', 'method' => 'DELETE' ])}}
+                                <a href="/#about" target="_blank" class="btn btn-success btn-sm"><i class="far fa-eye"></i> </a>
+
+                                <a href="{{route('about.edit', $es_section['lang'])}}" class="btn btn-primary btn-sm">
                                     <i class="far fa-edit"></i>
                                 </a>
-                                @if($operation->status == 0)
-                                <a href="/admin/operaciones/status/{{ $operation->id }}/1" class="btn btn-success">
-                                    <i class="fas fa-ban text-white"></i>
-                                </a>
-                                @else
-                                <a href="/admin/operaciones/status/{{ $operation->id }}/0" class="btn btn-warning">
-                                    <i class="fas fa-ban"></i>
-                                </a>
-                                @endif
-                                <button onclick="return confirm('¿Deseas eliminar el elemento?')"
-                                    class="btn btn-danger">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
+
+
                                 {{ Form::close() }}
                             </td>
                         </tr>

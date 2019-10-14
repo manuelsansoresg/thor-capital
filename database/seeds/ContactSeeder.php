@@ -12,12 +12,14 @@ class ContactSeeder extends Seeder
      */
     public function run()
     {
+        $findSection = SectionLanguage::where('section_id', 3);
+        $findSection->delete();
         /* seccion1 español*/
         $section_language = new SectionLanguage();
         $section_language->section_id = 3;
         $section_language->name = 'title';
         $section_language->lang = 'es';
-        $section_language->description = '<span class="objectsans-heavy">CONTACTANOS</span>';
+        $section_language->description = '<span class="objectsans-heavy">CONTÁCTANOS</span>';
         $section_language->save();
         // inputs
         $section_language = new SectionLanguage();
@@ -60,7 +62,7 @@ class ContactSeeder extends Seeder
         $section_language->section_id = 3;
         $section_language->name = 'val_address';
         $section_language->lang = 'es';
-        $section_language->description = 'Address';
+        $section_language->description = '3335  Brown Bear Drive';
         $section_language->save();
 
         $section_language = new SectionLanguage();
@@ -72,9 +74,23 @@ class ContactSeeder extends Seeder
 
         $section_language = new SectionLanguage();
         $section_language->section_id = 3;
+        $section_language->name = 'val_phone';
+        $section_language->lang = 'es';
+        $section_language->description = '071-246-3165';
+        $section_language->save();
+
+        $section_language = new SectionLanguage();
+        $section_language->section_id = 3;
         $section_language->name = 'txt_email';
         $section_language->lang = 'es';
         $section_language->description = 'Email';
+        $section_language->save();
+
+        $section_language = new SectionLanguage();
+        $section_language->section_id = 3;
+        $section_language->name = 'val_email';
+        $section_language->lang = 'es';
+        $section_language->description = 'contacto@tor-capital.com';
         $section_language->save();
         // textos inferiores
         /* seccion1 español*/
@@ -127,7 +143,7 @@ class ContactSeeder extends Seeder
         $section_language->section_id = 3;
         $section_language->name = 'val_address';
         $section_language->lang = 'en';
-        $section_language->description = 'Address';
+        $section_language->description = '3335  Brown Bear Drive';
         $section_language->save();
 
         $section_language = new SectionLanguage();
@@ -142,6 +158,21 @@ class ContactSeeder extends Seeder
         $section_language->name = 'txt_email';
         $section_language->lang = 'en';
         $section_language->description = 'Email';
+        $section_language->save();
+
+        $section_language = new SectionLanguage();
+        $section_language->section_id = 3;
+        $section_language->name = 'val_phone';
+        $section_language->lang = 'en';
+        $section_language->description = '071-246-3165';
+        $section_language->save();
+
+        $section_language = new SectionLanguage();
+
+        $section_language->section_id = 3;
+        $section_language->name = 'val_email';
+        $section_language->lang = 'en';
+        $section_language->description = 'contacto@tor-capital.com';
         $section_language->save();
         // textos inferiores
         /* seccion1 ingles*/
@@ -194,7 +225,7 @@ class ContactSeeder extends Seeder
         $section_language->section_id = 3;
         $section_language->name = 'val_address';
         $section_language->lang = 'fr';
-        $section_language->description = 'Address';
+        $section_language->description = '3335  Brown Bear Drive';
         $section_language->save();
 
         $section_language = new SectionLanguage();
@@ -210,6 +241,27 @@ class ContactSeeder extends Seeder
         $section_language->lang = 'fr';
         $section_language->description = 'Email';
         $section_language->save();
+
+        $section_language->section_id = 3;
+        $section_language->name = 'val_phone';
+        $section_language->lang = 'fr';
+        $section_language->description = '071-246-3165';
+        $section_language->save();
+        $section_language = new SectionLanguage();
+
+        $section_language->section_id = 3;
+        $section_language->name = 'val_email';
+        $section_language->lang = 'fr';
+        $section_language->description = 'contacto@tor-capital.com';
+        $section_language->save();
+
+        $section_language = new SectionLanguage();
+        $section_language->section_id = 3;
+        $section_language->name = 'txt_email';
+        $section_language->lang = 'fr';
+        $section_language->description = 'Email';
+        $section_language->save();
+
         // textos inferiores
 
         /* seccion1 frances*/

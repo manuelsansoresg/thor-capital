@@ -19,7 +19,7 @@ class CreateLanguageSections extends Migration
             $table->string('name');
             $table->string('lang', 4);
             $table->string('type', 4)->default('text');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->foreign('section_id')->references('id')->on('sections')
                 ->onUpdate('cascade')->onDelete('cascade');

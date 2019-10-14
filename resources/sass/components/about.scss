@@ -11,11 +11,12 @@
 
     &__title{
         font-family: 'ObjectSans-Bold';
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     &__description{
         color: $blue;
+        font-size: 0.8rem;
     }
 
     &__content-box{
@@ -40,7 +41,54 @@
         }
         &__description{
             width: 70%;
-
+            font-size: 0.8rem;
         }
     }
+}
+
+.about-movil{
+    color: $blue;
+
+    img{
+        width: 100%;
+    }
+
+    &__description-blue{
+        background-color: $blue;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 0.8rem;
+        color: white;
+    }
+}
+
+/******************************************************************************
+**  responsive
+*********************************************************************************
+*/
+@media (min-width: 1920px) {
+    .about{
+        &__title{
+            font-family: 'ObjectSans-Bold';
+            font-size: 2.5em;
+        }
+        &__description{
+            font-size: 1rem;
+        }
+        &__box{
+            &__description{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-down(sm){
+
 }

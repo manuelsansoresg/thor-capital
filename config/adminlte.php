@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'AdminTor',
 
     'title_prefix' => '',
 
@@ -132,7 +132,7 @@ return [
             'text' => 'search',
             'search' => true,
         ],*/
-        ['header' => 'main_navigation'],
+        ['header' => 'Menu'],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -144,6 +144,31 @@ return [
             'icon'        => 'far fa-file',
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Criterios de inversión',
+            'url'         => 'admin/criteria',
+            'icon'        => 'far fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Equipo',
+            'url'         => 'admin/team',
+            'icon'        => 'far fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Transacciones',
+            'url'         => 'admin/transaction',
+            'icon'        => 'far fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Contacto',
+            'url'         => 'admin/contact',
+            'icon'        => 'far fa-file',
+            'label_color' => 'success',
+        ],
+
         /*['header' => 'account_settings'],
         [
             'text' => 'profile',
